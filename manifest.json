@@ -3,7 +3,7 @@
   "name": "Date Converter",
   "version": "1.0",
   "description": "Convert selected date and show popup and clip",
-  "permissions": ["contextMenus", "scripting", "activeTab"],
+  "permissions": ["contextMenus", "scripting", "activeTab", "notifications","clipboardWrite"],
   "background": {
     "service_worker": "background.js"
   },
