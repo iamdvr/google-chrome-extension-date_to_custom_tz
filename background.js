@@ -133,9 +133,20 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
   }
 });
 
+
 // Function to show conversion results as an alert on the page
 function showConversionResults(utcString, istString, nyString, centralString) {
   // console.log(`${istString}\n\n${utcString}\n\n${nyString}\n\n${centralString}\n`);
+  
+  // Copy the UTC date to clipboard in the page context
+  const input = document.createElement("textarea");
+  input.value = `${istString}\n${utcString}\n${nyString}\n${centralString}`;
+  document.body.appendChild(input);
+  input.select();
+  document.execCommand("copy");
+  document.body.removeChild(input);
+
   alert(`${istString}\n${utcString}\n${nyString}\n${centralString}`);
 }
+
 
